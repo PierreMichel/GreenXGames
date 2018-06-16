@@ -7,11 +7,15 @@ public class TouchMovePlanete : MonoBehaviour
     public float vitesse = 0.01f;
     public bool dragbool;
     public float perspectiveZoomvitesse = 0.1f;
+    public GameObject Planete;
 
     public void DragStart()
     {
         dragbool = true;
-        GetComponentInChildren<BoxCollider>().enabled = false;
+        if (GetComponentInChildren<BoxCollider>() != null)
+        {
+            GetComponentInChildren<BoxCollider>().enabled = false;
+        }
     }
 
     public void Drag()
@@ -21,15 +25,18 @@ public class TouchMovePlanete : MonoBehaviour
 
             Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 
-            transform.RotateAround(Vector3.up, -touchDeltaPosition.x * vitesse);
-            transform.RotateAround(Vector3.right, touchDeltaPosition.y * vitesse);
+            Planete.transform.RotateAround(Vector3.up, -touchDeltaPosition.x * vitesse);
+            Planete.transform.RotateAround(Vector3.right, touchDeltaPosition.y * vitesse);
         }
     }
 
     public void DragEnd()
     {
         dragbool = false;
-        GetComponentInChildren<BoxCollider>().enabled = true;
+        if (GetComponentInChildren<BoxCollider>() != null)
+        {
+            GetComponentInChildren<BoxCollider>().enabled = true;
+        }
     }
 
     void Update()
@@ -50,7 +57,7 @@ public class TouchMovePlanete : MonoBehaviour
             
             Camera.main.fieldOfView += deltaMagnitudeDiff * perspectiveZoomvitesse;
             
-            Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 0.1f, 179.9f);
+            Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 20f, 110f);
         }
         else
         {

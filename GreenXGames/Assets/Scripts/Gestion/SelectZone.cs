@@ -12,6 +12,7 @@ public class SelectZone : MonoBehaviour
         if (GetComponentInParent<TouchMovePlanete>().dragbool == false)
         {
             UIBatiments.SetActive(true);
+            Destroy(this.gameObject);
         }
     }
 }
