@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23344931618536362}
   - component: {fileID: 135731490683442356}
   m_Layer: 5
-  m_Name: Sphere
+  m_Name: KGMcentrales0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

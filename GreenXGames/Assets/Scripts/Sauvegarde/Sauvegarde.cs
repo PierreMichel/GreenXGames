@@ -61,9 +61,14 @@ public class Sauvegarde : MonoBehaviour
 
     public static void Reinitialiser ()
 	{
+        PlayerPrefs.DeleteAll();
         // GameManager \\
 
         PlayerPrefs.SetInt(Sauvegarde.cle.KGMcycles, 0);
+        PlayerPrefs.SetInt(Sauvegarde.cle.KGMcentraleslvl, 0);
+        PlayerPrefs.SetInt(Sauvegarde.cle.KGMfermeslvl, 1);
+        PlayerPrefs.SetInt(Sauvegarde.cle.KGMstationslvl, 1);
+        PlayerPrefs.SetInt(Sauvegarde.cle.KGMexploitationslvl, 1);
 
         // Parametres \\
 

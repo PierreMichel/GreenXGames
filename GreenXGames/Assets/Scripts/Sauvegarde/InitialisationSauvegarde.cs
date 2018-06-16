@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InitialisationSauvegarde : MonoBehaviour {
+public class InitialisationSauvegarde : MonoBehaviour
+{
 
 	private int LaSauvegardeExiste;
-    public InputField Mail;
-    public InputField Mdp;
 
-	void Start ()
+	void Awake ()
 	{	
 		Sauvegarde.CheckSave ();
 		LaSauvegardeExiste = Sauvegarde.Initialisation.SauvegardeExiste;
@@ -18,6 +17,10 @@ public class InitialisationSauvegarde : MonoBehaviour {
         {
             Sauvegarde.Reinitialiser();
             Debug.Log("Sauvegarde Initialisée");
+        }
+        else
+        {
+            Debug.Log("pas besoin d'initialiser la sauvegarde");
         }
     }
 }
