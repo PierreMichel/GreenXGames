@@ -9,6 +9,9 @@ public class SelectZone : MonoBehaviour
 
     private void OnMouseUp() // Si l'on appuis sur l'objet, la fonction s'execute.
     {
-        UIBatiments.SetActive(true);
+        if (GetComponentInParent<TouchMovePlanete>().dragbool == false)
+        {
+            UIBatiments.SetActive(true);
+        }
     }
 }
