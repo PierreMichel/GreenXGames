@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,9 +11,10 @@ public class GameManager : MonoBehaviour
     [Space(10)]
     public GameObject NuagePolution;
     [HideInInspector]
-    public int Polution, Energie, Eau, Bois, Pierre, Metal, Nourriture;
+    public int Polution, Polueur, Energie,PerteEnergie, Eau, GainEau, Bois, GainBois, Pierre, GainPierre, Metal, Nourriture, Décharge;
     [Header("UI")]
     public GameObject UILeadboard;
+    public Text txtPomme;
     
     bool acheter;
 
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour
             GameObject Tuto = Instantiate(Resources.Load<GameObject>("Tutoriel"),SpawnTutorielUI);
 
             PlayerPrefs.SetInt(Sauvegarde.cle.KRpolution , 10);
-            PlayerPrefs.SetInt(Sauvegarde.cle.KRenergie , 0);
+            PlayerPrefs.SetInt(Sauvegarde.cle.KRtraitement, 0);   
             PlayerPrefs.SetInt(Sauvegarde.cle.KReau , 0);
             PlayerPrefs.SetInt(Sauvegarde.cle.KRbois , 0);
             PlayerPrefs.SetInt(Sauvegarde.cle.KRpierre , 0);
@@ -66,16 +68,16 @@ public class GameManager : MonoBehaviour
     void setRessources()
     {
         Polution = PlayerPrefs.GetInt(Sauvegarde.cle.KRpolution);
-        Energie = PlayerPrefs.GetInt(Sauvegarde.cle.KRenergie);
         Eau = PlayerPrefs.GetInt(Sauvegarde.cle.KReau);
         Pierre = PlayerPrefs.GetInt(Sauvegarde.cle.KRpierre);
         Metal = PlayerPrefs.GetInt(Sauvegarde.cle.KRmetal);
         Nourriture = PlayerPrefs.GetInt(Sauvegarde.cle.KRnourriture);
     }
-
+    
     public void NextDay()
     {
         PlayerPrefs.SetInt(Sauvegarde.cle.KGMcycles, PlayerPrefs.GetInt(Sauvegarde.cle.KGMcycles) + 1);
+        
         
     }
 }

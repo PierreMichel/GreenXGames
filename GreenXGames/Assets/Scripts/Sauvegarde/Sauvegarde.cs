@@ -15,6 +15,7 @@ public class Cle
     public string KRmetal = "KRmetal";
     public string KRpierre = "KRpierre";
     public string KRpolution = "KRpolution";
+    public string KRtraitement = "KRtraitement";
 
     // GameManager \\
 
