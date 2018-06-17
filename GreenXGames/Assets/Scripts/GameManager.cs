@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
         {
             GameObject Centrale = Instantiate(Resources.Load<GameObject>(Sauvegarde.cle.KGMcentrales + PlayerPrefs.GetInt(Sauvegarde.cle.KGMcentraleslvl).ToString()), SpawnCentrale);
             Centrale.transform.parent = SpawnCentrale.transform;
-            GameObject Tuto = Instantiate(Resources.Load<GameObject>("Tutoriel"),SpawnTutorielUI);
 
             PlayerPrefs.SetInt(Sauvegarde.cle.KRpolution , 10);
             PlayerPrefs.SetInt(Sauvegarde.cle.KRtraitement, 0);   
