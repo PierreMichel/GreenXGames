@@ -14,7 +14,11 @@ public class GameManager : MonoBehaviour
     public int Polution, Polueur, Energie,PerteEnergie, Eau, GainEau, Bois, GainBois, Pierre, GainPierre, Metal, Nourriture, Décharge;
     [Header("UI")]
     public GameObject UILeadboard;
-    public Text txtPomme;
+    public Text txtEau, txtSapin, txtPomme, txtMetal, txtPierre;
+    [Space(10)]
+    public Text txtEnergie;
+    public Image SliderEnergie;
+
     
     bool acheter;
 
@@ -35,6 +39,8 @@ public class GameManager : MonoBehaviour
             acheter = true;
             NuagePolution.SetActive(false);
         }
+
+        UpdateResources();
     }
 
     void Spawn()
@@ -79,5 +85,17 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt(Sauvegarde.cle.KGMcycles, PlayerPrefs.GetInt(Sauvegarde.cle.KGMcycles) + 1);
         
         
+    }
+
+    void UpdateResources()
+    {
+        txtEau.text = Eau.ToString();
+        txtSapin.text = Eau.ToString();
+        txtPomme.text = Nourriture.ToString();
+        txtMetal.text = Metal.ToString();
+        txtPierre.text = Pierre.ToString();
+
+        txtEnergie.text = Energie.ToString()+"/10";
+        SliderEnergie.fillAmount = Energie / 10;
     }
 }

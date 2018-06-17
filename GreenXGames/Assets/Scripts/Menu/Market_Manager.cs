@@ -7,11 +7,6 @@ public class Market_Manager : MonoBehaviour
 {
     public Animator Anim;
 
-    void start ()
-    {
-        
-    }
-
     public void OpenMarket()
     {
         Anim.enabled = true;

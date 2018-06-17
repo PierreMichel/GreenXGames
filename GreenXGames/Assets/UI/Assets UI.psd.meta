@@ -22,6 +22,7 @@ TextureImporter:
     21300034: UI_Eau
     21300036: UI_SliderEnergie
     21300038: UI_SliderBord
+    21300040: UI_Barre
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -308,6 +309,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cde12ee038f51b947851544c3399ed4a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Barre
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1891
+        width: 1675
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657a792309e4be442856456e800951ac
       vertices: []
       indices: 
       edges: []
